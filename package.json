@@ -1,0 +1,21 @@
+{
+  "name": "bored-games",
+  "version": "1.0.0",
+  "description": "Board games for when you're bored",
+  "main": "index.js",
+  "repository": "git@github.com:jessebond2/bored-games.git",
+  "author": "jessebond2 <30394856+jessebond2@users.noreply.github.com>",
+  "license": "GNU GPLv3",
+  "private": false,
+  "dependencies": {
+    "next": "^9.3.5",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  }
+}
