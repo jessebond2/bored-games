@@ -8,14 +8,21 @@
   "license": "GNU GPLv3",
   "private": false,
   "dependencies": {
+    "express": "^4.17.1",
+    "isomorphic-fetch": "^2.2.1",
     "next": "^9.3.5",
     "prettier": "^2.0.5",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "uuid": "^7.0.3"
   },
   "scripts": {
-    "dev": "next",
+    "dev:old": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js",
+    "start:old": "next start"
   }
 }
