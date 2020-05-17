@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { v4 as uuid } from 'uuid'
+import { v4 as _uuid } from 'uuid'
 import io from 'socket.io-client'
 import fetch from 'isomorphic-fetch'
 
@@ -15,15 +15,17 @@ export default class Chat extends React.Component {
   state = {
     field: '',
     messages: this.props.messages,
-    uuid: uuid(),
+    uuid: null,
   }
 
   // connect to WS server and listen event
   componentDidMount() {
+    const uuid = _uuid()
+    this.setState({ uuid })
     this.channelName = `message::${this.props.room}`
     this.socket = io('http://localhost:3000')
     this.socket.on(this.channelName, this.handleMessage)
-    this.socket.emit('newUser', this.createMessage({ value: this.state.uuid }))
+    this.socket.emit('newUser', this.createMessage({ value: uuid }))
   }
 
   // close socket connection

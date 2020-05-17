@@ -1,14 +1,11 @@
 import { Component } from 'react'
-import Chat from './chat'
+import Body from '../components/body'
 
 class HomePage extends Component {
   render() {
     return (
       <main>
-        <div className="chat">
-          <Chat room="red" />
-          <Chat room="blue" />
-        </div>
+        <Body />
       </main>
     )
   }
